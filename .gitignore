@@ -1,0 +1,16 @@
+!.gitignore
+#bower_components
+grunt
+landing
+src
+update.txt
+readme.txt
+!html/img
+!html/css
+!html/fonts
+!html/js
+!html/mcq-play.html
+!html/interests.html
+!html/login.html
+!bower.json
+node_modules/*

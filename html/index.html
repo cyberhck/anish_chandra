@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Global | Email</title>
+	<meta name="theme-color" content="#0CBDAA">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css" type="text/css" />
+	<link rel="stylesheet" href="css/font.css" type="text/css" />
+	<link rel="stylesheet" href="css/app.css" type="text/css" />
+	<link rel="stylesheet" href="css/toastr.css">
+	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="js/toastr.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="https://code.jquery.com/ui/1.10.2/jquery-ui.min.js"></script>
+	<script src="/bower_components/react-tageditor/dist/TagEditor.js"></script>
+	<script src="js/facebook.js"></script>
+	<script src="js/google.js"></script>
+	<script src="js/cookies.js"></script>
+	<script src="js/draw.js"></script>
+	<script src="js/twinmax.js"></script>
+	<script src="https://apis.google.com/js/api:client.js"></script>
+	<script src="js/script.js"></script>
+	<link rel="stylesheet" href="/bower_components/react-tageditor/dist/style/default.css">
+	<link rel="stylesheet" href="css/tagEditor.css">
+	<script src="js/carat.min.js"></script>
+	<script src="js/tageditor.js"></script>
+	<script src="js/ui-nav.js"></script>
+	<script src="js/ui-toggle.js"></script>
+	<script src="js/ui-load.js"></script>
+	<script src="js/ui-jp.config.js"></script>
+            <style>
+                .wrong_answer{
+                    background-color: #E74C3C;
+                }
+                .right_answer{
+                    background-color: #1BBC9B;
+                }
+            </style>
+</head>
+
+<body>
+	<div id="container" class="app app-header-fixed">
+		<style>
+		/*  ==========================================================================
+    Loader.css
+    Last update:01/26/15
+    ========================================================================== */
+
+@-webkit-keyframes loader-animation {
+    0% { left:-102px }
+    100% { left:102px }
+}
+
+@-moz-keyframes loader-animation {
+    0% { left:-102px }
+    100% { left:102px }
+}
+
+@-ms-keyframes loader-animation {
+    0% { left:-102px }
+    100% { left:102px }
+}
+
+@-o-keyframes loader-animation {
+    0% { left:-102px }
+    100% { left:102px }
+}
+
+@keyframes loader-animation {
+    0% { left:-102px }
+    100% { left:102px }
+}
+
+
+@-webkit-keyframes text-blink {
+    0% {
+        opacity:1
+    }
+
+    20% {
+        opacity:0.5
+    }
+
+    40% {
+        opacity:0.2
+    }
+
+    60% {
+        opacity:0.7
+    }
+
+    80% {
+        opacity:0.1
+    }
+
+    90% {
+        opacity:0.4
+    }
+}
+
+@-moz-keyframes text-blink {
+    0% {
+        opacity:1
+    }
+
+    20% {
+        opacity:0.5
+    }
+
+    40% {
+        opacity:0.2
+    }
+
+    60% {
+        opacity:0.7
+    }
+
+    80% {
+        opacity:0.1
+    }
+
+    90% {
+        opacity:0.4
+    }
+}
+
+@-ms-keyframes text-blink {
+    0% {
+        opacity:1
+    }
+
+    20% {
+        opacity:0.5
+    }
+
+    40% {
+        opacity:0.2
+    }
+
+    60% {
+        opacity:0.7
+    }
+
+    80% {
+        opacity:0.1
+    }
+
+    90% {
+        opacity:0.4
+    }
+}
+
+@-o-keyframes text-blink {
+    0% {
+        opacity:1
+    }
+
+    20% {
+        opacity:0.5
+    }
+
+    40% {
+        opacity:0.2
+    }
+
+    60% {
+        opacity:0.7
+    }
+
+    80% {
+        opacity:0.1
+    }
+
+    90% {
+        opacity:0.4
+    }
+}
+
+@keyframes text-blink {
+    0% {
+        opacity:1
+    }
+
+    20% {
+        opacity:0.5
+    }
+
+    40% {
+        opacity:0.2
+    }
+
+    60% {
+        opacity:0.7
+    }
+
+    80% {
+        opacity:0.1
+    }
+
+    90% {
+        opacity:0.4
+    }
+}
+
+/* ==================== Loader ==================== */
+
+.loader {
+	position:fixed;
+	z-index:9999;
+	width:100%;
+	height:100%;
+	background:#ffffff; /* Changes the loading background color */
+}
+
+.loader h5 {
+	-webkit-animation:text-blink 1s infinite;
+       -moz-animation:text-blink 1s infinite;
+       	-ms-animation:text-blink 1s infinite;
+       	 -o-animation:text-blink 1s infinite;
+    		animation:text-blink 1s infinite;
+}
+.app-header-fixed {
+    padding-top: 0px !important;
+}
+.loader-content {
+	display:block;
+	    left: 45%;
+	position:relative;
+	top:45%;
+	-webkit-animation:fadeInDown 0.8s; 
+	   -moz-animation:fadeInDown 0.8s; 
+		-ms-animation:fadeInDown 0.8s;
+		 -o-animation:fadeInDown 0.8s;
+			animation:fadeInDown 0.8s;
+}
+
+.progress-container {
+	display:inline-block;
+	position:relative;
+	width:100px;
+	height:1px;
+	overflow:hidden;
+}
+
+.progress {
+	display:block;
+	position:absolute;
+	bottom:0;
+	left:-102px;
+	overflow:hidden;
+	width:100px;
+	height:1px;
+	background-color:#bba454; /* Changes the progress bar color bar */
+	-webkit-animation:loader-animation 1s 0s infinite;
+       -moz-animation:loader-animation 1s 0s infinite;
+       	-ms-animation:loader-animation 1s 0s infinite;
+       	 -o-animation:loader-animation 1s 0s infinite;
+    		animation:loader-animation 1s 0s infinite;
+}
+.loader .loader-content img {
+	margin-left: 2%;
+  -webkit-animation-name: spinner; 
+  -webkit-animation-timing-function: linear; 
+  -webkit-animation-iteration-count: infinite; 
+  -webkit-animation-duration: 5s; 
+  animation-name: spinner; 
+  animation-timing-function: linear; 
+  animation-iteration-count: infinite; 
+  animation-duration: 5s; 
+  -webkit-transform-style: preserve-3d; 
+  -moz-transform-style: preserve-3d; 
+  -ms-transform-style: preserve-3d; 
+  transform-style: preserve-3d;
+}
+
+
+/* WebKit and Opera browsers */ 
+@-webkit-keyframes spinner { 
+  from 
+  { 
+    -webkit-transform: rotateY(0deg); 
+  } 
+  to { 
+    -webkit-transform: rotateY(-360deg); 
+  } 
+} 
+/* all other browsers */ 
+@keyframes spinner { 
+   from { 
+    -moz-transform: rotateY(0deg); 
+    -ms-transform: rotateY(0deg); 
+    transform: rotateY(0deg); 
+   } 
+   to 
+   { 
+    -moz-transform: rotateY(-360deg); 
+    -ms-transform: rotateY(-360deg); 
+    transform: rotateY(-360deg); 
+
+   } 
+}
+		</style>
+		<div class="loader center dark">
+			<div class="loader-content">
+				<img src="/img/logo_footer.png" width="64" height="64">
+				<br>
+				<h5>Loading. Please wait...</h5>
+				<span class="progress-container"><span class="progress"></span></span>
+			</div>
+			<script type="text/javascript">
+			
+			</script>
+		</div>
+	</div>
+</body>
+<script src="js/app_react.js" type="text/babel"></script>
+<script src="js/ui-nav.js"></script>
+<script src="js/ui-toggle.js"></script>
+</html>

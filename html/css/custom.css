@@ -1,0 +1,40 @@
+.wmd-button-bar {
+    display: none;
+}
+
+textarea.wmd-input {
+    width: 100%;
+    min-height: 240px;
+    resize: none;
+    overflow: hidden;
+    padding: 10px;
+    word-wrap: break-word;
+}
+
+input.wmd-input {
+    height: 40px;
+    width: 100%;
+    padding: 10px;
+}
+
+.wmd-preview {
+    display: none;
+}
+
+a.delete-option,
+a.add-option {
+    position: absolute;
+    vertical-align: middle;
+    right: 20px;
+    top: 13px;
+}
+
+#wmd-input-option-add {
+    border: 1px dotted #333;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.option-container {
+    margin-bottom: 15px;
+}
