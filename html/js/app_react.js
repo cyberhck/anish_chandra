@@ -63,8 +63,7 @@ var Login = React.createClass({
 		<div className="container w-xxl w-auto-xs" style={{marginTop:"15%"}}>
 			<div className="m-b-lg">
 				<form name="form" className="form-validation">
-					<button type="button" onClick={this.googleClicked} id="google_login" className="btn btn-rounded btn-lg 
-btn-danger btn-block"><i className="fa fa-fw fa-google-plus"></i>Login with Google</button>
+					<button type="button" onClick={this.googleClicked} id="google_login" className="btn btn-rounded btn-lg btn-danger btn-block"><i className="fa fa-fw fa-google-plus"></i>Login with Google</button>
 				</form>
 			</div>
 			<div id="loader" style={{display:"none"}}>
