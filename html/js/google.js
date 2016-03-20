@@ -23,6 +23,8 @@ function onSignIn(googleUser,post_login) {
 	console.log("Signed In");
 	// Useful data for your client-side scripts:
 	var profile = googleUser.getBasicProfile();
+	console.log(profile.getEmail());
+	console.log(googleUser.hg.access_token);
 	$('#loader_message').html('Connecting to Venturesity');
 	// console.log("ID: " + profile.getId()); // Don't send this directly to your server!
 	// console.log("Name: " + profile.getName());
