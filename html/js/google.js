@@ -29,6 +29,5 @@ function onSignIn(googleUser,post_login) {
 	// console.log("Image URL: " + profile.getImageUrl());
 	// console.log("Email: " + profile.getEmail());
 	// The ID token you need to pass to your backend:
-	send_to_server(profile.getEmail(),googleUser.hg.access_token,"google",post_login);
-
+	send_to_server(profile.getEmail(),googleUser.hg.id_token,"google",post_login);
 }

@@ -13,14 +13,14 @@
 	<link rel="stylesheet" href="css/toastr.css">
 	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="js/toastr.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.js"></script> -->
+	<script src="js/react.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
 	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
 	<script src="https://code.jquery.com/ui/1.10.2/jquery-ui.min.js"></script>
 	<script src="/bower_components/react-tageditor/dist/TagEditor.js"></script>
-	<script src="js/facebook.js"></script>
 	<script src="js/google.js"></script>
 	<script src="js/cookies.js"></script>
 	<script src="js/draw.js"></script>
@@ -35,178 +35,178 @@
 	<script src="js/ui-toggle.js"></script>
 	<script src="js/ui-load.js"></script>
 	<script src="js/ui-jp.config.js"></script>
-            <style>
-                .wrong_answer{
-                    background-color: #E74C3C;
-                }
-                .right_answer{
-                    background-color: #1BBC9B;
-                }
-            </style>
+			<style>
+				.wrong_answer{
+					background-color: #E74C3C;
+				}
+				.right_answer{
+					background-color: #1BBC9B;
+				}
+			</style>
 </head>
 
 <body>
 	<div id="container" class="app app-header-fixed">
 		<style>
 		/*  ==========================================================================
-    Loader.css
-    Last update:01/26/15
-    ========================================================================== */
+	Loader.css
+	Last update:01/26/15
+	========================================================================== */
 
 @-webkit-keyframes loader-animation {
-    0% { left:-102px }
-    100% { left:102px }
+	0% { left:-102px }
+	100% { left:102px }
 }
 
 @-moz-keyframes loader-animation {
-    0% { left:-102px }
-    100% { left:102px }
+	0% { left:-102px }
+	100% { left:102px }
 }
 
 @-ms-keyframes loader-animation {
-    0% { left:-102px }
-    100% { left:102px }
+	0% { left:-102px }
+	100% { left:102px }
 }
 
 @-o-keyframes loader-animation {
-    0% { left:-102px }
-    100% { left:102px }
+	0% { left:-102px }
+	100% { left:102px }
 }
 
 @keyframes loader-animation {
-    0% { left:-102px }
-    100% { left:102px }
+	0% { left:-102px }
+	100% { left:102px }
 }
 
 
 @-webkit-keyframes text-blink {
-    0% {
-        opacity:1
-    }
+	0% {
+		opacity:1
+	}
 
-    20% {
-        opacity:0.5
-    }
+	20% {
+		opacity:0.5
+	}
 
-    40% {
-        opacity:0.2
-    }
+	40% {
+		opacity:0.2
+	}
 
-    60% {
-        opacity:0.7
-    }
+	60% {
+		opacity:0.7
+	}
 
-    80% {
-        opacity:0.1
-    }
+	80% {
+		opacity:0.1
+	}
 
-    90% {
-        opacity:0.4
-    }
+	90% {
+		opacity:0.4
+	}
 }
 
 @-moz-keyframes text-blink {
-    0% {
-        opacity:1
-    }
+	0% {
+		opacity:1
+	}
 
-    20% {
-        opacity:0.5
-    }
+	20% {
+		opacity:0.5
+	}
 
-    40% {
-        opacity:0.2
-    }
+	40% {
+		opacity:0.2
+	}
 
-    60% {
-        opacity:0.7
-    }
+	60% {
+		opacity:0.7
+	}
 
-    80% {
-        opacity:0.1
-    }
+	80% {
+		opacity:0.1
+	}
 
-    90% {
-        opacity:0.4
-    }
+	90% {
+		opacity:0.4
+	}
 }
 
 @-ms-keyframes text-blink {
-    0% {
-        opacity:1
-    }
+	0% {
+		opacity:1
+	}
 
-    20% {
-        opacity:0.5
-    }
+	20% {
+		opacity:0.5
+	}
 
-    40% {
-        opacity:0.2
-    }
+	40% {
+		opacity:0.2
+	}
 
-    60% {
-        opacity:0.7
-    }
+	60% {
+		opacity:0.7
+	}
 
-    80% {
-        opacity:0.1
-    }
+	80% {
+		opacity:0.1
+	}
 
-    90% {
-        opacity:0.4
-    }
+	90% {
+		opacity:0.4
+	}
 }
 
 @-o-keyframes text-blink {
-    0% {
-        opacity:1
-    }
+	0% {
+		opacity:1
+	}
 
-    20% {
-        opacity:0.5
-    }
+	20% {
+		opacity:0.5
+	}
 
-    40% {
-        opacity:0.2
-    }
+	40% {
+		opacity:0.2
+	}
 
-    60% {
-        opacity:0.7
-    }
+	60% {
+		opacity:0.7
+	}
 
-    80% {
-        opacity:0.1
-    }
+	80% {
+		opacity:0.1
+	}
 
-    90% {
-        opacity:0.4
-    }
+	90% {
+		opacity:0.4
+	}
 }
 
 @keyframes text-blink {
-    0% {
-        opacity:1
-    }
+	0% {
+		opacity:1
+	}
 
-    20% {
-        opacity:0.5
-    }
+	20% {
+		opacity:0.5
+	}
 
-    40% {
-        opacity:0.2
-    }
+	40% {
+		opacity:0.2
+	}
 
-    60% {
-        opacity:0.7
-    }
+	60% {
+		opacity:0.7
+	}
 
-    80% {
-        opacity:0.1
-    }
+	80% {
+		opacity:0.1
+	}
 
-    90% {
-        opacity:0.4
-    }
+	90% {
+		opacity:0.4
+	}
 }
 
 /* ==================== Loader ==================== */
@@ -221,17 +221,17 @@
 
 .loader h5 {
 	-webkit-animation:text-blink 1s infinite;
-       -moz-animation:text-blink 1s infinite;
-       	-ms-animation:text-blink 1s infinite;
-       	 -o-animation:text-blink 1s infinite;
-    		animation:text-blink 1s infinite;
+	   -moz-animation:text-blink 1s infinite;
+		-ms-animation:text-blink 1s infinite;
+		 -o-animation:text-blink 1s infinite;
+			animation:text-blink 1s infinite;
 }
 .app-header-fixed {
-    padding-top: 0px !important;
+	padding-top: 0px !important;
 }
 .loader-content {
 	display:block;
-	    left: 45%;
+		left: 45%;
 	position:relative;
 	top:45%;
 	-webkit-animation:fadeInDown 0.8s; 
@@ -259,10 +259,10 @@
 	height:1px;
 	background-color:#bba454; /* Changes the progress bar color bar */
 	-webkit-animation:loader-animation 1s 0s infinite;
-       -moz-animation:loader-animation 1s 0s infinite;
-       	-ms-animation:loader-animation 1s 0s infinite;
-       	 -o-animation:loader-animation 1s 0s infinite;
-    		animation:loader-animation 1s 0s infinite;
+	   -moz-animation:loader-animation 1s 0s infinite;
+		-ms-animation:loader-animation 1s 0s infinite;
+		 -o-animation:loader-animation 1s 0s infinite;
+			animation:loader-animation 1s 0s infinite;
 }
 .loader .loader-content img {
 	margin-left: 2%;
@@ -285,24 +285,24 @@
 @-webkit-keyframes spinner { 
   from 
   { 
-    -webkit-transform: rotateY(0deg); 
+	-webkit-transform: rotateY(0deg); 
   } 
   to { 
-    -webkit-transform: rotateY(-360deg); 
+	-webkit-transform: rotateY(-360deg); 
   } 
 } 
 /* all other browsers */ 
 @keyframes spinner { 
    from { 
-    -moz-transform: rotateY(0deg); 
-    -ms-transform: rotateY(0deg); 
-    transform: rotateY(0deg); 
+	-moz-transform: rotateY(0deg); 
+	-ms-transform: rotateY(0deg); 
+	transform: rotateY(0deg); 
    } 
    to 
    { 
-    -moz-transform: rotateY(-360deg); 
-    -ms-transform: rotateY(-360deg); 
-    transform: rotateY(-360deg); 
+	-moz-transform: rotateY(-360deg); 
+	-ms-transform: rotateY(-360deg); 
+	transform: rotateY(-360deg); 
 
    } 
 }
