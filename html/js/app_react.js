@@ -21,8 +21,9 @@ var backgroundLightF5F5={
 	backgroundColor:"#F5F5F5"
 }
 var Login = React.createClass({
-			post_login:function(){
-				alert("came");
+			post_login:function(response){
+				console.log(response.auth_token);
+				Cookies.set('auth-token',response.auth_token);
 			},
 			componentDidMount: function(){
 				// window.history.pushState("login", "Login", "/login");

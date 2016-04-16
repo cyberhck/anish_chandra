@@ -1,4 +1,4 @@
-base_url = "http://localhost"
+base_url = "http://chandra"
 
 function send_to_server(email, token, flag,post_login) {
 	$.ajax({
@@ -7,8 +7,8 @@ function send_to_server(email, token, flag,post_login) {
 		dataType: 'json',
 		data: {access_token: token}
 	})
-	.done(function() {
-		console.log("success");
+	.done(function(response) {
+		post_login(response);
 	})
 	.fail(function() {
 		console.log("error");
