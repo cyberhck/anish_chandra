@@ -121,7 +121,7 @@ var ListImages = React.createClass({
 			console.log("complete");
 		});
 	},
-	change_phone: functioni(){
+	change_phone: function(){
 		var new_phone = prompt("Enter new phone number");
 		$.ajax({
 			url: base_url+"/user/set_phone",
