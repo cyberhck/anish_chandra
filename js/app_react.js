@@ -143,7 +143,7 @@ var ListImages = React.createClass({
 		.always(function() {
 			console.log("complete");
 		});
-	}
+	},
 	render: function(){
 		return (
 			<div>
