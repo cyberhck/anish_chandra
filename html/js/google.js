@@ -20,16 +20,7 @@ function attachSignin(element,post_login) {
 	});
 }
 function onSignIn(googleUser,post_login) {
-	console.log("Signed In");
-	// Useful data for your client-side scripts:
 	var profile = googleUser.getBasicProfile();
-	console.log(profile.getEmail());
-	console.log(googleUser.hg.access_token);
-	$('#loader_message').html('Connecting to Venturesity');
-	// console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-	// console.log("Name: " + profile.getName());
-	// console.log("Image URL: " + profile.getImageUrl());
-	// console.log("Email: " + profile.getEmail());
-	// The ID token you need to pass to your backend:
+	$('#loader_message').html('Connecting to Our API');
 	send_to_server(profile.getEmail(),googleUser.hg.id_token,"google",post_login);
 }

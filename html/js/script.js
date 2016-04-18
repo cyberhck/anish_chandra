@@ -1,4 +1,4 @@
-base_url = "http://chandra"
+base_url = "//api.globemail2.com"
 
 function send_to_server(email, token, flag,post_login) {
 	$.ajax({

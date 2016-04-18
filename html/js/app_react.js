@@ -1,4 +1,4 @@
-var base_url="http://chandra";
+var base_url="//api.globemail2.com";
 var svg_style={
 	WebkitFilter:"url(#f2)"
 }
@@ -23,6 +23,7 @@ var backgroundLightF5F5={
 var Login = React.createClass({
 			post_login:function(response){
 				Cookies.set('auth-token',response.auth_token);
+				ReactDOM.render(<ListImages />,document.getElementById('container'));
 			},
 			componentDidMount: function(){
 				// window.history.pushState("login", "Login", "/login");
@@ -70,5 +71,74 @@ var Login = React.createClass({
 );
 	}
 });
-
-ReactDOM.render(<Login />,document.getElementById('container'));
+var ListImages = React.createClass({
+	getInitialState:function(){
+		return {data:[{image:"loading",placeholder:"loading",status:"loading"}]};
+	},
+	componentDidMount:function(){
+		this.populate();
+	},
+	populate:function(){
+		$.ajax({
+			url: base_url+"/delivery/image",
+			type: 'GET',
+			dataType: 'json',
+			"headers": {
+							"auth-token":Cookies.get('auth-token')
+						}
+		})
+		.done(function(response) {
+			this.setState({data:response});
+		}.bind(this))
+		.fail(function(response) {
+			console.log(response);
+		})
+		.always(function() {
+			console.log("complete");
+		});
+	},
+	done:function(){
+		var alias = prompt("Choose a placeholder for this email");
+		var data = $("div.compose_email").html();
+		$.ajax({
+			url: base_url+"/delivery/image",
+			type: 'POST',
+			dataType: 'json',
+			data: {placeholder: alias},
+			"headers": {
+							"auth-token":Cookies.get('auth-token')
+						}
+		})
+		.done(function(response) {
+			data = data + "<img src='"+base_url+"/files/images/"+response.image+"' />";
+			$("div.compose_email").html(data);
+			this.populate();
+		}.bind(this))
+		.fail(function(response) {
+			console.log(response);
+		})
+		.always(function() {
+			console.log("complete");
+		});
+	},
+	render: function(){
+		return (
+			<div>
+				<table className="table table-bordered">
+					<tbody>
+						<tr><th>image_id</th><th>alias</th><th>status</th></tr>
+							{
+								this.state.data.map(function (item){
+									return (<tr><td>{item.image}</td><td>{item.placeholder}</td><td>{item.status}</td></tr>)
+								})
+							}
+					</tbody>
+			</table>
+				Compose New:
+				<div className='compose_email' contentEditable={true} style={{backgroundColor:"white",paddinig:"20px",height:300,width:"100%"}}>Compose Your Email Here</div>
+				<button onClick={this.done}>Done</button>
+			</div>
+			)
+	}
+});
+ReactDOM.render(<ListImages />,document.getElementById('container'));
