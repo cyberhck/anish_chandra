@@ -164,4 +164,4 @@ var ListImages = React.createClass({
 			)
 	}
 });
-ReactDOM.render(<ListImages />,document.getElementById('container'));
+ReactDOM.render(<Login />,document.getElementById('container'));
