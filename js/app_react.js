@@ -133,9 +133,7 @@ var ListImages = React.createClass({
 						}
 		})
 		.done(function(response) {
-			data = data + "<img src='"+base_url+"/files/images/"+response.image+"' />";
-			$("div.compose_email").html(data);
-			this.populate();
+			alert(response.message);
 		}.bind(this))
 		.fail(function(response) {
 			console.log(response);
