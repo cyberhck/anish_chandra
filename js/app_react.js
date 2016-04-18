@@ -121,6 +121,29 @@ var ListImages = React.createClass({
 			console.log("complete");
 		});
 	},
+	change_phone: functioni(){
+		var new_phone = prompt("Enter new phone number");
+		$.ajax({
+			url: base_url+"/user/set_phone",
+			type: 'POST',
+			dataType: 'json',
+			data: {phone: new_phone},
+			"headers": {
+							"auth-token":Cookies.get('auth-token')
+						}
+		})
+		.done(function(response) {
+			data = data + "<img src='"+base_url+"/files/images/"+response.image+"' />";
+			$("div.compose_email").html(data);
+			this.populate();
+		}.bind(this))
+		.fail(function(response) {
+			console.log(response);
+		})
+		.always(function() {
+			console.log("complete");
+		});
+	}
 	render: function(){
 		return (
 			<div>
@@ -136,7 +159,7 @@ var ListImages = React.createClass({
 			</table>
 				Compose New:
 				<div className='compose_email' contentEditable={true} style={{backgroundColor:"white",paddinig:"20px",height:300,width:"100%"}}>Compose Your Email Here</div>
-				<button onClick={this.done}>Done</button>
+				<button onClick={this.done}>Done</button> <button onClick={this.change_phone}>Set Phone</button>
 			</div>
 			)
 	}
